@@ -1,9 +1,12 @@
 // program to solve quadratic equation
 //        ax^2 + bx + c = 0
 //
-// soln: x = -b/2a +/- sqrt(b^2-4ac)/2a
+// 
+// sigmaX' = sigmaX * cos^2(theta) + sigmaY * sin^2(theta) + 2 * tauXY Sin(theta)Cos(theta)
+// sigmaY' = sigmaX * sin^2(theta) + sigmaY * cos^2(theta) - 2 * tauXY Sin(theta)Cos(theta) 
+// tauXY' = (sigmaY-sigmaX) * sin(theta)cos(theta) + tauXY(cos^2(theta) - sin^2(theta))
 //
-// write a program to take 3 inputs and output the soln
+//write a program to take 3 inputs and output the soln
 // deal with possible errors in input, i.e. b^2-4ac negative
 
 #include <stdlib.h>
@@ -12,14 +15,16 @@
 
 int main(int argc, char **argv) {
 
-  if (argc != 4) {
-    printf("Usage: appName a b c\n");
+  if (argc != 5) {
+    printf("Usage: appName a b c d\n");
     exit(-1);
   }
 
-  float a = atof(argv[1]);
-  float b = atof(argv[2]);
-  float c = atof(argv[3]);
+  float vector[3], vectorTransformed[3] = atof(argv[1]);
+  vector[0] = atof(argv[0]);
+  vector[1] = atof(argv[1]);
+  vector[2] = atof(argv[2]);
+  float theta = atof(argv[4]);
 
   float b2minus4ac = b*b-4*a*c;
 
