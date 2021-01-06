@@ -26,33 +26,10 @@ int main(int argc, char **argv) {
   vector[2] = atof(argv[2]);
   float theta = atof(argv[4]);
 
-  float b2minus4ac = b*b-4*a*c;
-
-  if (b2minus4ac > 0.0) {
-    
-    double bDiv2a = b/(2*a);
-    double other = sqrt(b2minus4ac)/(2*a);
-    double x1 = bDiv2a - other;
-    double x2 = bDiv2a + other;    
-    printf("Double Solution x1:  %f  x2: %f\n", x1, x2);    
-
-  } else if (b2minus4ac == 0.0) {
-
-    double x = -b/(2*a);
-    printf("Single Solution is %f\n", x);
-    
-  } else {
-    
-    double bDiv2a = b/(2*a);
-    double other = sqrt(-b2minus4ac)/(2*a);
-    double x1 = bDiv2a - other;
-    double x2 = bDiv2a + other;
-    
-    printf("Complex Solution x1:  %f + %fi, x2: %f + %fi\n", bDiv2a, other, bDiv2a, -other);    
-    
-  }
 
   
   return 0;
 }
 
+
+float StressTrans (

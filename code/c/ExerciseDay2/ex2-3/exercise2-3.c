@@ -8,7 +8,7 @@
 int main(int argc, char **argv) {
 
 	// get dth from the first argument.  This is given in degrees!
-	...
+	float dth = atof(argv[1]); 
 	// might be smart to set a default value, just in case the user
 	// forgets when calling this  program;)
 
